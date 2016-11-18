@@ -10,6 +10,8 @@
         <item name="colorControlHighlight">#1ef1ab</item>
         <item name="colorButtonNormal">#f955f3</item>
         <item name="colorControlActivated">#0cf427</item>
+
+
     </style>
 
     <style name="MaterialTheme" parent="ParentMaterialTheme">
