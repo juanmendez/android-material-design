@@ -6,6 +6,11 @@
         <item name="android:textColorSecondary">@android:color/white</item>
     </style>
 
+    <style name="PopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/grey_500</item>    <!-- Text color of Overflow Menu items-->
+        <item name="android:background">@color/overflowMenuBg</item>        <!-- Background of Overflow Menu -->
+    </style>
+
     <style name="MyBaseToolbar" parent="Base.Widget.AppCompat.Toolbar">
         <item name="android:minHeight">?attr/actionBarSize</item>
         <item name="android:background">@color/colorPrimary</item>
