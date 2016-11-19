@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="info.juanmendez.md.befamiliar.MainActivity">
+    tools:context="info.juanmendez.md.befamiliar.app.MainActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -14,4 +14,10 @@
         android:theme="@style/ToolbarTheme"
         app:popupTheme="@style/PopupTheme">
     </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>
