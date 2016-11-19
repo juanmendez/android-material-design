@@ -22,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
     void afterViews(){
 
         setSupportActionBar( toolbar );
-        getSupportActionBar().setIcon( R.drawable.good_day);
         toolbar.setTitle("Welcome!");
         toolbar.setSubtitle("Folks!");
-        toolbar.setNavigationIcon( R.drawable.navigation_back);
 
         /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ){
         }else{
