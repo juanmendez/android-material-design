@@ -1,6 +1,5 @@
-package info.juanmendez.md.befamiliar;
+package info.juanmendez.md.befamiliar.app;
 
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
@@ -10,6 +9,8 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
+
+import info.juanmendez.md.befamiliar.R;
 
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.main_menu)
@@ -24,10 +25,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar( toolbar );
         toolbar.setTitle("Welcome!");
         toolbar.setSubtitle("Folks!");
+        setupRecyclerView();
+    }
 
-        /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ){
-        }else{
-        }*/
+    private void setupRecyclerView(){
+
     }
 
     @OptionsItem
