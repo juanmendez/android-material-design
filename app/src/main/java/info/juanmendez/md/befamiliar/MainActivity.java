@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar( toolbar );
         getSupportActionBar().setIcon( R.drawable.good_day);
-        getSupportActionBar().setTitle("Welcome!");
-        getSupportActionBar().setSubtitle("Folks!");
+        toolbar.setTitle("Welcome!");
+        toolbar.setSubtitle("Folks!");
         toolbar.setNavigationIcon( R.drawable.navigation_back);
 
         /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ){
