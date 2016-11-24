@@ -2,8 +2,10 @@ package info.juanmendez.md.befamiliar.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
@@ -48,28 +50,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OptionsItem
-    void discard(){
-        toastForMe( "discard" );
+    void linearViewHorizontal(){
+        LinearLayoutManager mLinearLayoutManagerHorizontal = new LinearLayoutManager(this);
+        mLinearLayoutManagerHorizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(mLinearLayoutManagerHorizontal);
     }
 
     @OptionsItem
-    void search(){
-        toastForMe( "search" );
+    void linearViewVertical(){
+        LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(this);
+        mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(mLinearLayoutManagerVertical);
     }
 
-    @OptionsItem
-    void settings(){
-        toastForMe( "settings" );
+    @OptionsItem(R.id.gridView)
+    void onGridView(){
+        GridLayoutManager mGridLayoutManager = new GridLayoutManager(this, 2); // (Context context, int spanCount)
+        recyclerView.setLayoutManager(mGridLayoutManager);
     }
 
-    @OptionsItem
-    void edit(){
-        toastForMe( "edit" );
+    @OptionsItem(R.id.staggeredViewHorizontal)
+    void onStaggeredHorizontal(){
+        StaggeredGridLayoutManager mStaggeredHorizontalLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL); // (int spanCount, int orientation)
+        recyclerView.setLayoutManager(mStaggeredHorizontalLayoutManager);
     }
 
-    @OptionsItem
-    void exit(){
-        toastForMe( "exit" );
+    @OptionsItem(R.id.staggeredViewVertical)
+    void onStaggeredVertical(){
+        StaggeredGridLayoutManager mStaggeredVerticalLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); // (int spanCount, int orientation)
+        recyclerView.setLayoutManager(mStaggeredVerticalLayoutManager);
     }
 
     private void toastForMe( String msg ){
