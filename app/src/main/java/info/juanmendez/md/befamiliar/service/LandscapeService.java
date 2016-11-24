@@ -18,24 +18,36 @@ public class LandscapeService {
         ArrayList<Landscape> dataList = new ArrayList<>();
 
         int[] images = {
-                R.drawable.aerosmith, R.drawable.black_sabbath,
+                R.drawable.aerosmith,
+                R.drawable.led_zeppelin,
+                R.drawable.black_sabbath,
                 R.drawable.deep_purple,
-                R.drawable.guns_n_roses, R.drawable.motley_crue,
-                R.drawable.pink_floyd, R.drawable.motorhead,
-                R.drawable.queen, R.drawable.tesla, R.drawable.zz_top
+                R.drawable.guns_n_roses,
+                R.drawable.motley_crue,
+                R.drawable.pink_floyd,
+                R.drawable.motorhead,
+                R.drawable.queen,
+                R.drawable.tesla
         };
 
-        String[] band_names = {
-                "Aerosmith", "Black Sabbath", "Deep Purple",
-                "Guns n' Roses", "Motley Crue", "Pink Floyd", "Motorhead",
-                "Queen", "Tesla", "ZZ Top"
+        String[] titles = {
+                "Aerosmith",
+                "Led Zeppelin",
+                "Black Sabbath",
+                "Deep Purple",
+                "Guns n' Roses",
+                "Motley Crue",
+                "Pink Floyd",
+                "Motorhead",
+                "Queen",
+                "Tesla"
         };
 
         for (int i = 0; i < images.length; i++) {
 
             Landscape landscape = new Landscape();
             landscape.setImageID(images[i]);
-            landscape.setTitle(band_names[i]);
+            landscape.setTitle(titles[i]);
 
             dataList.add(landscape);
         }
