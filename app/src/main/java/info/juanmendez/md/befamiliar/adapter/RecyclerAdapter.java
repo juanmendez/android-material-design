@@ -56,8 +56,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            title       = (TextView)  itemView.findViewById(R.id.txv_row);
+            title       = (TextView)  itemView.findViewById(R.id.tvTitle);
             imgThumb    = (ImageView) itemView.findViewById(R.id.img_row);
+            imgDelete   = (ImageView) itemView.findViewById(R.id.img_row_delete);
+            imgAdd      = (ImageView) itemView.findViewById(R.id.img_row_add);
         }
 
         public void setData(Landscape current, int position) {
