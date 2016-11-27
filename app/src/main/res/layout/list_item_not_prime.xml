@@ -21,7 +21,7 @@
             android:layout_height="60dp"
             android:layout_margin="7dp"
             android:contentDescription="@string/thumbnail"
-            android:src="@drawable/pink_floyd"/>
+            android:src="@drawable/guns_n_roses"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -49,30 +49,16 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/img_row_delete"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_margin="7dp"
-                android:contentDescription="@string/delete_image"
-                android:src="@drawable/ic_delete"
-                android:tint="@color/grey_500"/>
-
-            <ImageView
-                android:id="@+id/img_row_add"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_margin="7dp"
-                android:contentDescription="@string/add_image"
-                android:src="@drawable/ic_make_copy"
-                android:tint="@color/grey_500"/>
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/img_row_not_prime"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="7dp"
+            android:contentDescription="Not Prime"
+            android:src="@drawable/not_prime"
+            android:layout_gravity="center_vertical"/>
 
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
+
