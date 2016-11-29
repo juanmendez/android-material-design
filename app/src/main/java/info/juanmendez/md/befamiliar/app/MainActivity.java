@@ -1,5 +1,6 @@
 package info.juanmendez.md.befamiliar.app;
 
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -7,7 +8,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -29,13 +29,21 @@ public class MainActivity extends AppCompatActivity {
     @ViewById
     RecyclerView recyclerView;
 
+    @ViewById(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+
     @AfterViews
     void afterViews(){
 
+        setupToolbar();
+        setupDrawer();
+        setupRecyclerView();
+    }
+
+    private void setupToolbar(){
         setSupportActionBar( toolbar );
         toolbar.setTitle("Welcome!");
         toolbar.setSubtitle("Folks!");
-        setupRecyclerView();
     }
 
     private void setupRecyclerView(){
@@ -47,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLinearLayoutManagerVertical);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator()); // Even if we dont use it then also our items shows default animation.
+    }
+
+    private void setupDrawer(){
+        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.nav_drwr_fragment);
+        drawerFragment.setUpDrawer(drawerLayout, toolbar);
     }
 
     @OptionsItem
@@ -79,9 +92,5 @@ public class MainActivity extends AppCompatActivity {
     void onStaggeredVertical(){
         StaggeredGridLayoutManager mStaggeredVerticalLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); // (int spanCount, int orientation)
         recyclerView.setLayoutManager(mStaggeredVerticalLayoutManager);
-    }
-
-    private void toastForMe( String msg ){
-        Toast.makeText( this, msg, Toast.LENGTH_LONG ).show();
     }
 }

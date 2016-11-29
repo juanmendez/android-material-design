@@ -50,7 +50,7 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView title;
-        ImageView imgThumb, imgDelete, imgAdd;
+        ImageView imgThumb;
         int position;
         Landscape current;
 
@@ -58,8 +58,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
             super(itemView);
             title       = (TextView)  itemView.findViewById(R.id.tvTitle);
             imgThumb    = (ImageView) itemView.findViewById(R.id.img_row);
-            imgDelete   = (ImageView) itemView.findViewById(R.id.img_row_delete);
-            imgAdd      = (ImageView) itemView.findViewById(R.id.img_row_add);
         }
 
         public void setData(Landscape current, int position) {
