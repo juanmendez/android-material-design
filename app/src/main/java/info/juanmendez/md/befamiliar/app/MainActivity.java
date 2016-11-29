@@ -78,19 +78,21 @@ public class MainActivity extends AppCompatActivity {
 
     @OptionsItem(R.id.gridView)
     void onGridView(){
-        GridLayoutManager mGridLayoutManager = new GridLayoutManager(this, 2); // (Context context, int spanCount)
+        GridLayoutManager mGridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mGridLayoutManager);
     }
 
     @OptionsItem(R.id.staggeredViewHorizontal)
     void onStaggeredHorizontal(){
-        StaggeredGridLayoutManager mStaggeredHorizontalLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL); // (int spanCount, int orientation)
+        StaggeredGridLayoutManager mStaggeredHorizontalLayoutManager =
+                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(mStaggeredHorizontalLayoutManager);
     }
 
     @OptionsItem(R.id.staggeredViewVertical)
     void onStaggeredVertical(){
-        StaggeredGridLayoutManager mStaggeredVerticalLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); // (int spanCount, int orientation)
+        StaggeredGridLayoutManager mStaggeredVerticalLayoutManager =
+                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(mStaggeredVerticalLayoutManager);
     }
 }

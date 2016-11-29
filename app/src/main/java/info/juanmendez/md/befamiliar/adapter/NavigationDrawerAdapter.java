@@ -21,12 +21,12 @@ import info.juanmendez.md.befamiliar.model.Landscape;
 
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder>{
 
-    List<Landscape> mData;
+    List<Landscape> landscapes;
     private LayoutInflater inflater;
 
     public NavigationDrawerAdapter(Context context, List<Landscape> data) {
         inflater = LayoutInflater.from(context);
-        this.mData = data;
+        this.landscapes = data;
     }
 
     @Override
@@ -38,21 +38,19 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Landscape current = mData.get(position);
+        Landscape current = landscapes.get(position);
         holder.setData(current, position);
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return landscapes.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView title;
         ImageView imgThumb;
-        int position;
-        Landscape current;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -63,8 +61,6 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
         public void setData(Landscape current, int position) {
             this.title.setText(current.getTitle());
             this.imgThumb.setImageResource(current.getImageID());
-            this.position = position;
-            this.current = current;
         }
     }
 }

@@ -22,12 +22,12 @@ import info.juanmendez.md.befamiliar.service.LandscapeService;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>{
 
-    List<Landscape> mData;
+    List<Landscape> landscapes;
     private LayoutInflater inflater;
 
     public RecyclerAdapter(Context context, List<Landscape> data) {
         inflater = LayoutInflater.from(context);
-        this.mData = data;
+        this.landscapes = data;
     }
 
     @Override
@@ -39,27 +39,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Landscape current = mData.get(position);
+        Landscape current = landscapes.get(position);
         holder.setData(current, position);
         holder.setListeners();
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return landscapes.size();
     }
 
     public void removeItem( int position ){
-        mData.remove( position );
+        landscapes.remove( position );
         /*notifyItemRemoved( position );
-        notifyItemRangeChanged( position, mData.size() );*/
+        notifyItemRangeChanged( position, landscapes.size() );*/
         notifyDataSetChanged();
     }
 
     public void addItem( int position, Landscape landscape ){
-        mData.add( position, landscape );
+        landscapes.add( position, landscape );
         /*notifyItemInserted( position );
-        notifyItemRangeChanged( position, mData.size() );*/
+        notifyItemRangeChanged( position, landscapes.size() );*/
         notifyDataSetChanged();
     }
 
