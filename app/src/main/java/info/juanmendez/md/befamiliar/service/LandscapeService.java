@@ -48,10 +48,25 @@ public class LandscapeService {
             Landscape landscape = new Landscape();
             landscape.setImageID(images[i]);
             landscape.setTitle(titles[i]);
+            landscape.setPrime( checkPrime(i) );
 
             dataList.add(landscape);
         }
 
         return dataList;
+    }
+
+    private static boolean checkPrime(int position) {
+
+        if (position == 0 || position == 1)
+            return false;
+
+        for (int i = 2; i <= position / 2; ++i) {
+            if (position % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
