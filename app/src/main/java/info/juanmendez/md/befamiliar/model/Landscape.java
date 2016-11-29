@@ -11,6 +11,7 @@ public class Landscape {
     private int imageID;
     private String title;
     private String description;
+    private boolean prime;
 
     public int getImageID() {
         return imageID;
@@ -34,5 +35,13 @@ public class Landscape {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isPrime() {
+        return prime;
+    }
+
+    public void setPrime(boolean prime) {
+        this.prime = prime;
     }
 }

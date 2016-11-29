@@ -12,7 +12,6 @@ import java.util.List;
 
 import info.juanmendez.md.befamiliar.R;
 import info.juanmendez.md.befamiliar.model.Landscape;
-import info.juanmendez.md.befamiliar.service.LandscapeService;
 
 /**
  * Created by Juan Mendez on 11/18/2016.
@@ -20,19 +19,19 @@ import info.juanmendez.md.befamiliar.service.LandscapeService;
  * contact@juanmendez.info
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>{
+public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder>{
 
     List<Landscape> mData;
     private LayoutInflater inflater;
 
-    public RecyclerAdapter(Context context, List<Landscape> data) {
+    public NavigationDrawerAdapter(Context context, List<Landscape> data) {
         inflater = LayoutInflater.from(context);
         this.mData = data;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_item, parent, false);
+        View view = inflater.inflate(R.layout.nav_drawer_list_item, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -41,26 +40,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Landscape current = mData.get(position);
         holder.setData(current, position);
-        holder.setListeners();
     }
 
     @Override
     public int getItemCount() {
         return mData.size();
-    }
-
-    public void removeItem( int position ){
-        mData.remove( position );
-        /*notifyItemRemoved( position );
-        notifyItemRangeChanged( position, mData.size() );*/
-        notifyDataSetChanged();
-    }
-
-    public void addItem( int position, Landscape landscape ){
-        mData.add( position, landscape );
-        /*notifyItemInserted( position );
-        notifyItemRangeChanged( position, mData.size() );*/
-        notifyDataSetChanged();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
@@ -83,17 +67,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             this.imgThumb.setImageResource(current.getImageID());
             this.position = position;
             this.current = current;
-        }
-
-        public void setListeners(){
-
-            imgAdd.setOnClickListener(view -> {
-                addItem( position, LandscapeService.clone( current ));
-            });
-
-            imgDelete.setOnClickListener(view -> {
-                removeItem( position );
-            });
         }
     }
 }

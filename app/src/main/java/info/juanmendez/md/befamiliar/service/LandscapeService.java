@@ -38,7 +38,7 @@ public class LandscapeService {
                 "Guns n' Roses",
                 "Motley Crue",
                 "Pink Floyd",
-                "Motorhead",
+                "Motörhead",
                 "Queen",
                 "Tesla"
         };
@@ -53,5 +53,39 @@ public class LandscapeService {
         }
 
         return dataList;
+    }
+
+
+    public static ArrayList<Landscape> getDrawerData() {
+
+        ArrayList<Landscape> dataList = new ArrayList<>();
+
+        int[] images = new int[]{
+                R.drawable.punk,
+                R.drawable.classic_rock,
+                R.drawable.heavy_metal,
+                R.drawable.trash_metal};
+
+        String[] titles = new String[] { "Punk", "Classic Rock", "Heavy Metal", "Thrash Metal"};
+
+        for (int i = 0; i < images.length; i++) {
+
+            Landscape item = new Landscape();
+            item.setImageID(images[i]);
+            item.setTitle(titles[i]);
+
+            dataList.add(item);
+        }
+
+        return dataList;
+    }
+
+    public static Landscape clone( Landscape landscape ){
+
+        Landscape l = new Landscape();
+        l.setDescription( landscape.getDescription() );
+        l.setImageID( landscape.getImageID() );
+        l.setTitle( landscape.getTitle());
+        return l;
     }
 }

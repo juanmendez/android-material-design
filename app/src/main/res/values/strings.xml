@@ -12,4 +12,20 @@
     <string name="StaggeredViewHorizontal">StaggeredViewHorizontal</string>
     <string name="StaggeredViewVertical">StaggeredViewVertical</string>
     <string name="LinearViewVertical">LinearView Vertical </string>
+
+    <string-array name="nav_drawer_labels">
+        <item>Punk</item>
+        <item>Heavy Metal</item>
+        <item>Thrash Metal</item>
+        <item>Classic Rock</item>
+    </string-array>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="edit">Edit</string>
+    <string name="exit">Exit</string>
 </resources>
