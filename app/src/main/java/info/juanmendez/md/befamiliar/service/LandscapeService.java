@@ -54,4 +54,13 @@ public class LandscapeService {
 
         return dataList;
     }
+
+    public static Landscape clone( Landscape landscape ){
+
+        Landscape l = new Landscape();
+        l.setDescription( landscape.getDescription() );
+        l.setImageID( landscape.getImageID() );
+        l.setTitle( landscape.getTitle());
+        return l;
+    }
 }
