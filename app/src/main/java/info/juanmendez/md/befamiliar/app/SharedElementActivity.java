@@ -2,6 +2,7 @@ package info.juanmendez.md.befamiliar.app;
 
 import android.support.v7.app.AppCompatActivity;
 
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 
 import info.juanmendez.md.befamiliar.R;
@@ -14,4 +15,9 @@ import info.juanmendez.md.befamiliar.R;
  */
 @EActivity(R.layout.activity_shared_element)
 public class SharedElementActivity extends AppCompatActivity {
+
+    @Click(R.id.exit_button)
+    void onExitButton(){
+        finishAfterTransition();
+    }
 }

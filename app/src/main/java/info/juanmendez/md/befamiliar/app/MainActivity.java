@@ -2,6 +2,8 @@ package info.juanmendez.md.befamiliar.app;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -100,6 +102,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txvRippleWithoutBorder.setOnClickListener(this);
         txvCustomRippleWithBorder.setOnClickListener(this);
         txvCustomRippleWithoutBorder.setOnClickListener(this);
+
+        txvShared.setOnClickListener(this);
+        layoutSharedElement.setOnClickListener( this );
     }
 
     private void goToTransition(Constants.AnimType type, String title, String name ){
@@ -154,15 +159,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.shared_element : {
 
-                /*Pair[] pair = new Pair[2];
+                Pair[] pair = new Pair[2];
 
                 pair[0] = new Pair<View, String>(imgStar, "star");
                 pair[1] = new Pair<View, String>(txvShared, "text_shared");
 
                 //noinspection unchecked
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pair);
-                Intent i = new Intent(MainActivity.this, SharedElementActivity.class);
-                startActivity(i, options.toBundle());*/
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation( this, pair );
+                Intent i = new Intent(MainActivity.this, SharedElementActivity_.class);
+                startActivity(i, options.toBundle());
 
                 break;
             }
