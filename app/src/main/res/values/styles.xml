@@ -7,7 +7,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="colorControlHighlight">#1ef1ab</item>
+        <!--makes ripple effect use green color -->
+        <item name="colorControlHighlight">#2fff00</item>
+
+
         <item name="colorButtonNormal">#f955f3</item>
         <item name="colorControlActivated">#0cf427</item>
 
