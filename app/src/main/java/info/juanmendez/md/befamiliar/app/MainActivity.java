@@ -102,85 +102,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txvCustomRippleWithoutBorder.setOnClickListener(this);
     }
 
+    private void goToTransition(Constants.AnimType type, String title, String name ){
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+        Intent i = new Intent(MainActivity.this, TransitionActivity_.class);
+        i.putExtra(Constants.KEY_TYPE, type );
+        i.putExtra(Constants.KEY_TITLE, title);
+        i.putExtra(Constants.KEY_NAME, name);
+        startActivity(i, options.toBundle());
+    }
+
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
+    public void onClick(View view) {
+        switch (view.getId()) {
 
             case R.id.explodeJava: {
 
-                //noinspection unchecked
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-                Intent i = new Intent(MainActivity.this, TransitionActivity_.class);
-                i.putExtra(Constants.KEY_TYPE, Constants.AnimType.ExplodeJava);
-                i.putExtra(Constants.KEY_TITLE, "Explode Animation");
-                i.putExtra(Constants.KEY_NAME, getString(R.string.explode_java));
-                startActivity(i, options.toBundle());
-
+                goToTransition(Constants.AnimType.ExplodeJava, "Explode Animation", getString(R.string.explode_java) );
                 break;
             }
 
             case R.id.explodeXML: {
 
-                //noinspection unchecked
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-                Intent i = new Intent(MainActivity.this, TransitionActivity_.class);
-                i.putExtra(Constants.KEY_TYPE, Constants.AnimType.ExplodeXML);
-                i.putExtra(Constants.KEY_TITLE, "Explode Animation");
-                i.putExtra(Constants.KEY_NAME, getString(R.string.explode_xml));
-                startActivity(i, options.toBundle());
-
+                goToTransition(Constants.AnimType.ExplodeXML, "Explode Animation", getString(R.string.explode_xml) );
                 break;
             }
 
             case R.id.slideJava : {
 
-                //noinspection unchecked
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-                Intent i = new Intent(MainActivity.this, TransitionActivity_.class);
-                i.putExtra(Constants.KEY_TYPE, Constants.AnimType.SlideJava);
-                i.putExtra(Constants.KEY_TITLE, "Slide Animation");
-                i.putExtra(Constants.KEY_NAME, getString(R.string.slide_java));
-                startActivity(i, options.toBundle());
-
+                goToTransition(Constants.AnimType.SlideJava, "Slide Animation", getString(R.string.slide_java) );
                 break;
             }
 
             case R.id.slideXML : {
 
-                //noinspection unchecked
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-                Intent i = new Intent(MainActivity.this, TransitionActivity_.class);
-                i.putExtra(Constants.KEY_TYPE, Constants.AnimType.SlideXML);
-                i.putExtra(Constants.KEY_TITLE, "Slide Animation");
-                i.putExtra(Constants.KEY_NAME, getString(R.string.slide_xml));
-                startActivity(i, options.toBundle());
-
+                goToTransition(Constants.AnimType.SlideXML, "Slide Animation", getString(R.string.slide_xml) );
                 break;
             }
 
             case R.id.fadeJava : {
 
-                //noinspection unchecked
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-                Intent i = new Intent(MainActivity.this, TransitionActivity_.class);
-                i.putExtra(Constants.KEY_TYPE, Constants.AnimType.FadeJava);
-                i.putExtra(Constants.KEY_TITLE, "Fade Animation");
-                i.putExtra(Constants.KEY_NAME, getString(R.string.fade_java));
-                startActivity(i, options.toBundle());
-
+                goToTransition(Constants.AnimType.FadeJava, "Fade Animation", getString(R.string.fade_java) );
                 break;
             }
 
             case R.id.fadeXML : {
 
-                //noinspection unchecked
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-                Intent i = new Intent(MainActivity.this, TransitionActivity_.class);
-                i.putExtra(Constants.KEY_TYPE, Constants.AnimType.FadeXML);
-                i.putExtra(Constants.KEY_TITLE, "Fade Animation");
-                i.putExtra(Constants.KEY_NAME, getString(R.string.fade_xml));
-                startActivity(i, options.toBundle());
-
+                goToTransition(Constants.AnimType.FadeXML, "Fade Animation", getString(R.string.fade_xml) );
                 break;
             }
 
