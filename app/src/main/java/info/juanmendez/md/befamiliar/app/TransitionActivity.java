@@ -10,6 +10,7 @@ import android.transition.TransitionInflater;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -73,6 +74,7 @@ public class TransitionActivity extends AppCompatActivity {
 
                 Explode enterTransition = new Explode();
                 enterTransition.setDuration(getResources().getInteger(R.integer.anim_duration_very_long));
+                enterTransition.setInterpolator(new BounceInterpolator());
                 getWindow().setEnterTransition(enterTransition);
                 break;
             }
@@ -107,6 +109,7 @@ public class TransitionActivity extends AppCompatActivity {
 
                 Fade enterTransition = new Fade();
                 enterTransition.setDuration(getResources().getInteger(R.integer.anim_duration_long));
+                enterTransition.setInterpolator(new AnticipateOvershootInterpolator());
                 getWindow().setEnterTransition(enterTransition);
                 break;
             }
@@ -125,5 +128,16 @@ public class TransitionActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(toolbarTitle);
+    }
+
+    /**
+     * this helps the back button to apply the reverse animation;
+     * otherwise, the current activity just leaves with no transition.
+     * @return
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        finishAfterTransition();
+        return true;
     }
 }
