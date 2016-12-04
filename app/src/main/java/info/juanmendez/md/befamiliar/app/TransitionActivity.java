@@ -47,6 +47,7 @@ public class TransitionActivity extends AppCompatActivity {
     @AfterInject
     void afterInject(){
         getWindow().requestFeature( Window.FEATURE_CONTENT_TRANSITIONS );
+        getWindow().setAllowEnterTransitionOverlap( false );
 
         type = (Constants.AnimType) getIntent().getSerializableExtra(Constants.KEY_TYPE);
         toolbarTitle = getIntent().getExtras().getString(Constants.KEY_TITLE);
@@ -59,7 +60,6 @@ public class TransitionActivity extends AppCompatActivity {
         mTxvAnimName.setText( animName );
         setUpAnimation();
         setupToolbar();
-        getWindow().setAllowEnterTransitionOverlap( false );
     }
 
     @Click(R.id.exit_button)

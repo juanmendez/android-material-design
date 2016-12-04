@@ -7,12 +7,15 @@ import android.support.v4.util.Pair;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsMenu;
@@ -70,6 +73,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @ViewById( R.id.txvSharedElement )
     TextView txvShared;
 
+    @AfterInject
+    void afterInject(){
+        setupWindowAnimation();
+    }
+
     @AfterViews
     void afterViews(){
         setupToolbar();
@@ -115,6 +123,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i.putExtra(Constants.KEY_TITLE, title);
         i.putExtra(Constants.KEY_NAME, name);
         startActivity(i, options.toBundle());
+    }
+
+    private void setupWindowAnimation(){
+        Slide slideTransition = new Slide();
+        slideTransition.setSlideEdge(Gravity.LEFT );
+        slideTransition.setDuration( 1000 );
+        getWindow().setReenterTransition( slideTransition );
+        getWindow().setAllowReturnTransitionOverlap( false );
     }
 
     @Override
